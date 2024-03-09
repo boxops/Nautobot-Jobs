@@ -1,10 +1,12 @@
 # type: ignore
 """Use retrieve device OS version and document in Nautobot LCM app."""
 
+from nautobot.apps.jobs import register_jobs
+
 from django.contrib.contenttypes.models import ContentType
 
 from nautobot.tenancy.models import Tenant, TenantGroup
-from nautobot.extras.jobs import Job, MultiObjectVar, register_jobs
+from nautobot.extras.jobs import Job, MultiObjectVar
 from nautobot.extras.models import Tag, Relationship, RelationshipAssociation
 from nautobot.dcim.models import (
     Device,
