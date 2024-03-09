@@ -13,8 +13,6 @@ from nautobot.dcim.models import (
     DeviceType,
     Manufacturer,
     Platform,
-    Region,
-    Site,
 )
 
 from nautobot_golden_config.utilities.helper import get_job_filter
@@ -64,8 +62,6 @@ class CreateSoftwareRel(Job):
     # Form fields
     tenant_group = MultiObjectVar(model=TenantGroup, required=False)
     tenant = MultiObjectVar(model=Tenant, required=False)
-    region = MultiObjectVar(model=Region, required=False)
-    site = MultiObjectVar(model=Site, required=False)
     manufacturer = MultiObjectVar(model=Manufacturer, required=False)
     platform = MultiObjectVar(model=Platform, required=False)
     device_type = MultiObjectVar(model=DeviceType, required=False)
