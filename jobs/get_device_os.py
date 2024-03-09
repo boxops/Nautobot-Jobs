@@ -10,7 +10,6 @@ from nautobot.extras.jobs import Job, MultiObjectVar
 from nautobot.extras.models import Tag, Relationship, RelationshipAssociation
 from nautobot.dcim.models import (
     Device,
-    Role,
     DeviceType,
     Manufacturer,
     Platform,
@@ -67,7 +66,6 @@ class CreateSoftwareRel(Job):
     tenant = MultiObjectVar(model=Tenant, required=False)
     region = MultiObjectVar(model=Region, required=False)
     site = MultiObjectVar(model=Site, required=False)
-    role = MultiObjectVar(model=Role, required=False)
     manufacturer = MultiObjectVar(model=Manufacturer, required=False)
     platform = MultiObjectVar(model=Platform, required=False)
     device_type = MultiObjectVar(model=DeviceType, required=False)
