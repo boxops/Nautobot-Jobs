@@ -4,7 +4,7 @@
 from django.contrib.contenttypes.models import ContentType
 
 from nautobot.tenancy.models import Tenant, TenantGroup
-from nautobot.extras.jobs import Job, MultiObjectVar
+from nautobot.extras.jobs import Job, MultiObjectVar, register_jobs
 from nautobot.extras.models import Tag, Relationship, RelationshipAssociation
 from nautobot.dcim.models import (
     Device,
@@ -140,3 +140,5 @@ class CreateSoftwareRel(Job):
                 obj=device_obj,
                 message=f"Created {device_obj.name} <-> {software} relationship.",
             )
+
+register_jobs(CreateSoftwareRel)
